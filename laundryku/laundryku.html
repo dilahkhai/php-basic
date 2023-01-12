@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry Ku</title>
+    <link rel="stylesheet" href="laundry.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+    * {box-sizing: border-box}
+    body {font-family: 'Poppins', sans-serif; margin:0}
+    .mySlides {display: none}
+    img {vertical-align: center;}
+    .slaid{
+        margin-left: 1060px;
+        margin-top: 20px;
+    }
+    .slideshow-container {  
+      width: 300px;
+      position: relative;
+      margin: auto;
+    }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 20px;
+      margin-top: -32px;
+      color: black;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.2);
+    }
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: relative;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: relative;
+      top: 0;
+    }
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #DBF7FF;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+    
+    .active, .dot:hover {
+      background-color: #08A6FF;
+    }
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+    
+    @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+    @media only screen and (max-width: 300px) {
+      .prev, .next,.text {font-size: 11px}
+    }
+    </style>
+<body>
+    <nav style="position: fixed; background-color: #DBF7FF; z-index: 20;">
+      <div class="logo">
+        <h4>Laxtaundry</h4>
+    </div>
+        <ul>
+            <li><a href="#welcome">Home</a></li>
+            <li><a href="#body">Prices</a></li>
+            <li><a href="#footer">About</a></li>
+            <li><a href="login.php">Sign In</a></li>
+            <!-- <li><a href="#footer">Contact</a></li> -->
+        </ul>
+    </nav>
+    <header id="welcome" style="padding-top: 50px;">
+        <img src="img/background.png" alt="" style="height: 780px; width: 900px;">
+        <h1 class="textsatu">Laundry Unit</h1> 
+        <h3 class="desc">Delivered to your doorstep</h3>
+        <h2 class="desk">We’re open from monday to saturday</h2>
+        <h1 class="nomor">021 - 86620713</h1>
+        <button id="order"><a href="login.php" style="color: #DBF7FF; text-decoration:none;">Order Now</a></button>
+        <h2 class="htu">How it works?</h2>
+        <div class="slaid">
+              <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                  <img src="img/htu1.png" style="width:100%">
+                </div>
+                
+                <div class="mySlides fade">
+                  <img src="img/htu2.png" style="width:100%">
+                </div>
+                
+                <div class="mySlides fade">
+                  <img src="img/htu3.png" style="width:100%">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="img/htu4.png" style="width:100%">
+                  </div>
+
+                  <div class="mySlides fade">
+                    <img src="img/htu5.png" style="width:100%">
+                  </div>
+                
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+                
+                </div>
+                <br>
+                
+                <div style="text-align:center">
+                  <span class="dot" onclick="currentSlide(1)"></span> 
+                  <span class="dot" onclick="currentSlide(2)"></span> 
+                  <span class="dot" onclick="currentSlide(3)"></span> 
+                  <span class="dot" onclick="currentSlide(4)"></span> 
+                  <span class="dot" onclick="currentSlide(5)"></span> 
+                </div>
+                
+                <script>
+                let slideIndex = 1;
+                showSlides(slideIndex);
+                
+                function plusSlides(n) {
+                  showSlides(slideIndex += n);
+                }
+                
+                function currentSlide(n) {
+                  showSlides(slideIndex = n);
+                }
+                
+                function showSlides(n) {
+                  let i;
+                  let slides = document.getElementsByClassName("mySlides");
+                  let dots = document.getElementsByClassName("dot");
+                  if (n > slides.length) {slideIndex = 1}    
+                  if (n < 1) {slideIndex = slides.length}
+                  for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                  }
+                  for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                  }
+                  slides[slideIndex-1].style.display = "block";  
+                  dots[slideIndex-1].className += " active";
+                }
+                </script>
+                </div>
+              <h2 class="free">Free shipping throughout Jabodetabek</h2>
+   </header>
+   <main id="body">
+    <h1 style="color: #08A6FF;">P r i c e  L i s t</h1>
+    <div class="box1">
+      <div class="image">
+      <img src="img/sskirt.png" alt="" style="width: 80px;">
+      <img src="img/jacket.png" alt="" style="width: 80px;">
+      <img src="img/shirt.png" alt="" style="width: 85px;">
+      <img src="img/tshirt.png" alt="" style="width: 85px;">
+      <img src="img/vest.png" alt="" style="width: 80px;">
+      <img class="tie" src="img/tie.png" alt="" style="width: 40px;">
+      <img src="img/dress.png" alt="" style="width: 80px;">
+      <img class="trou" src="img/trouser.png" alt="" style="width: 60px;">
+      </div>
+      <section id="boxes">
+        <button data-hover="Rp. 14.000" class="box3" style="font-weight: bolder;">
+          <div class="skirt" style="font-weight: bolder;">Skirt</div>
+        </button>
+        <button data-hover="Rp. 20.000" class="box4" style="font-weight: bolder;">
+          <div class="jacket" style="font-weight: bolder;">Jacket</div>
+        </button>
+        <button data-hover="Rp. 13.000" class="box5" style="font-weight: bolder;">
+          <div class="shirt" style="font-weight: bolder;">Shirt</div>
+        </button>
+        <button data-hover="Rp. 10.000" class="box6" style="font-weight: bolder;">
+          <div class="tshirt" style="font-weight: bolder;">TShirt</div>
+        </button>
+        <button data-hover="Rp. 15.000" class="box7" style="font-weight: bolder;">
+          <div class="vest" style="font-weight: bolder;">Vest</div>
+        </button>
+        <button data-hover="Rp. 5000" class="box8" style="font-weight: bolder;">
+          <div class="tiie" style="font-weight: bolder;">Tie</div>
+        </button>
+        <button data-hover="Rp. 20000" class="box9" style="font-weight: bolder;">
+          <div class="dress" style="font-weight: bolder;">Dress</div>
+        </button>
+        <button data-hover="Rp. 15.000" class="box0" style="font-weight: bolder;">
+          <div class="trouser" style="font-weight: bolder;">Trouser</div>
+        </button>
+    </section>
+    </div>
+    <div class="box2"></div>
+    <button id="order1"><a href="" style="color: #DBF7FF;; text-decoration:none;">See More</a></button>
+    </main>
+</body> 
+<footer id="footer" style="height: 50vh; background-color: #DBF7FF;"> 
+  <div class="boox" style="height:350px; width: 1200px; background-color: #f2f2f2;
+  margin-left: 170px; border-radius: 20px; padding-left: 50px; padding-top: 20px;">
+  <h1 style="margin-left: 480px; margin-top: 20px;">About Us</h1>
+  <h2 style="text-align: center; margin-left: 40px; margin-top:20px; width: 1000px;">Laundry unit clothes are cheap but not cheap, safe, and fast.
+    Get your laundry back in less than 24 hours.
+    Laundry unit clothes which was pioneered in 2020, and already has 8 branches throughout Jabodetabek.
+    Also has 6 professional employees in each branch.
+    Very trusted and always try to give the best in every service we provide.
+    Customers are kings for us, we serve as kings are served.</h2>
+  
+  </div>
+</footer>
+
+
+</html>
